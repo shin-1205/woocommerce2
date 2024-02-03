@@ -1,0 +1,25 @@
+{
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "indentation": 4,
+    "color-hex-length": "short",
+    "color-named": "never",
+    "selector-combinator-space-after": "never",
+    "selector-attribute-quotes": "never",
+    "selector-attribute-operator-space-before": "never",
+    "selector-attribute-operator-space-after": "never",
+    "selector-attribute-brackets-space-inside": "never",
+    "declaration-block-trailing-semicolon": "never",
+    "property-no-vendor-prefix": true,
+    "value-no-vendor-prefix": true,
+    "function-url-quotes": "always",
+    "at-rule-no-vendor-prefix": true,
+    "selector-no-vendor-prefix": true,
+    "media-feature-range-operator-space-before": "always",
+    "media-feature-range-operator-space-after": "always",
+    "media-feature-parentheses-space-inside": "never",
+    "media-feature-name-no-vendor-prefix": true
+  }
+}

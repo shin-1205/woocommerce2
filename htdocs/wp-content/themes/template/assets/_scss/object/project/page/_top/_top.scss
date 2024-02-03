@@ -1,0 +1,54 @@
+@use "./../../../../foundation/_mixin" as *;
+
+.p-top{
+  font-family: $noto;
+  color: color(font_black);
+  font-size: rem(16);
+  line-height: lh(16, 28);
+  letter-spacing: ls(20);
+
+  @include mq_sp{
+    font-size: vw(16);
+  }
+}
+
+li{
+  list-style: none;
+}
+
+.navbar-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+
+  li{
+    margin-left: 30px;
+  }
+}
+
+// 記事一覧
+
+.main-blog{
+  padding: 30px;
+  margin-bottom: 30px;
+  background: salmon;
+  color: #fff;
+
+  p{
+    color: #fff;
+  }
+}
+
+.columns-3{
+  padding: 50px;
+}
+
+
+
+// ボタン
+
+.woocommerce ul.products li.product .button{
+  background: #333;
+  color: #fff;
+}

@@ -1,0 +1,25 @@
+@forward "./foundation/theme";
+@forward "./foundation/mixin";
+@forward "./foundation/reset";
+@forward "./foundation/base";
+// theme        WPテーマ設定
+// mixin        Sass変数設定
+// reset        リセットCSS
+// base         共通設定
+
+@forward "./layout/**";
+// container    コンテンツ幅
+// header       ヘッダー
+// footer       フッター
+// nav          ナビメニュー
+// sidebar      サイドバー
+// breadcrumb   パンくずリスト
+
+@forward "./object/component/**";
+// component    共通モジュールのscss
+
+@forward "./object/utility/**";
+// utility      微調整用のscss
+
+@forward "./object/project/**";
+// {slug}       各ページ調整用のscss

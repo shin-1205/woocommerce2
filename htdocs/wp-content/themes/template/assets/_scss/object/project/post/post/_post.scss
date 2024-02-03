@@ -1,0 +1,12 @@
+@use "./../../../../foundation/_mixin" as *;
+
+.p-post{
+  font-family: $noto;
+  font-size: rem(16);
+  line-height: lh(16, 28);
+  letter-spacing: ls(20);
+
+  @include mq_sp{
+    font-size: vw(16);
+  }
+}

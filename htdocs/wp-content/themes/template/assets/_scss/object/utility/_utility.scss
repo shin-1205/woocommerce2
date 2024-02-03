@@ -1,0 +1,45 @@
+@use "./../../foundation/_mixin" as *;
+
+.u-wrap{
+  max-width: rem(1140);
+  padding: 0 rem(20);
+  margin: 0 auto;
+
+  @include mq_sp{
+    padding: 0 vw(20);
+  }
+}
+
+.u-nopc{
+  display: none;
+
+  @include mq_sp{
+    display: inherit;
+  }
+}
+
+.u-nosp{
+  display: inherit;
+
+  @include mq_sp{
+    display: none;
+  }
+}
+
+.u-hover{
+  &--fade{
+    transition: opacity 0.3s ease;
+
+    @include mq_sp{
+      transition: none;
+    }
+
+    &:hover{
+      opacity: 0.7;
+
+      @include mq_sp{
+        opacity: 1;
+      }
+    }
+  }
+}

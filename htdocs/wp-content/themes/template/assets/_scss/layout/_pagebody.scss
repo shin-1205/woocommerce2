@@ -1,0 +1,6 @@
+@use "./../foundation/_mixin" as *;
+
+.l-pagebody{
+  @include mq_sp{
+  }
+}

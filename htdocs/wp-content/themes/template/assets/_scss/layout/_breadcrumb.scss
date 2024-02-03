@@ -1,0 +1,6 @@
+@use "./../foundation/_mixin" as *;
+
+.l-breadcrumb{
+  @include mq_sp{
+  }
+}

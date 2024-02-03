@@ -1,0 +1,6 @@
+@use "./../foundation/_mixin" as *;
+
+.l-footer{
+  @include mq_sp{
+  }
+}

@@ -1,0 +1,6 @@
+@use "./../foundation/_mixin" as *;
+
+.l-nav{
+  @include mq_sp{
+  }
+}

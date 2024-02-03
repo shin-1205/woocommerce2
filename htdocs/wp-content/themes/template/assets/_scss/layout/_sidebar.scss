@@ -1,0 +1,6 @@
+@use "./../foundation/_mixin" as *;
+
+.l-sidebar{
+  @include mq_sp{
+  }
+}

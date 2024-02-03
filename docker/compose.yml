@@ -1,0 +1,54 @@
+services:
+  # MySQLについて
+  db:
+    # platform: linux/x86_64
+    image: mysql:latest
+    container_name: ${COMPOSE_PROJECT_NAME}_mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_CHARACTER_SET: utf8mb4
+      MYSQL_COLLATION: utf8mb4_general_ci
+    volumes:
+      - ./mysql/db:/var/lib/mysql
+      - ./mysql/initdb.d:/docker-entrypoint-initdb.d
+
+# サーバー
+  apache:
+    build: ./apache2
+    container_name: ${COMPOSE_PROJECT_NAME}_apache
+    restart: always
+    ports:
+      - 8080:80
+      ### VirtualHost
+      # - 80:80
+    volumes:
+      - ./../htdocs:/var/www/html
+      - ./apache2/php/php.ini:/usr/local/etc/php/php.ini
+    ### VirtualHost
+    #   - ./apache2/vhosts/vhosts.conf:/etc/apache2/sites-available/vhosts.conf
+    # command: /bin/bash -c "a2ensite vhosts && apache2-foreground"
+
+# PHP myadmin
+  phpmyadmin:
+    platform: linux/x86_64
+    build: ./phpmyadmin
+    container_name: ${COMPOSE_PROJECT_NAME}_phpmyadmin
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 8081:80
+    volumes:
+      - ./phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+
+# メール
+  mailhog:
+    platform: linux/x86_64
+    image: mailhog/mailhog:latest
+    container_name: ${COMPOSE_PROJECT_NAME}_mailhog
+    ports:
+      - 1025:1025 # SMTP
+      - 8025:8025 # Web

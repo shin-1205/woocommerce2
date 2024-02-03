@@ -1,0 +1,32 @@
+@use "./_mixin" as *;
+
+body{
+  background: #fff;
+  overflow-x: hidden;
+  color: #212121;
+  line-height: 1;
+
+  *{
+    box-sizing: border-box;
+    font-family: $noto;
+  }
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+ul, ol, dl{
+  list-style: none;
+}
+
+a{
+  outline: none;
+  color: #38b5dd;
+}
+
+p, li, dt, dd{
+  color: #212121;
+  line-height: 1;
+}
